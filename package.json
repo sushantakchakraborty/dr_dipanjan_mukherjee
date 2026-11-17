@@ -1,0 +1,7 @@
+{
+  "name": "dr-dipanjan-mukherjee-website",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

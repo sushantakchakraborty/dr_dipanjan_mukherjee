@@ -1,0 +1,503 @@
+/* =====================================================
+   Dr. Dipanjan Mukherjee — Services page styles
+   Built on Bootstrap 5
+   ===================================================== */
+
+:root {
+    --brand: #009dff;
+    --brand-dark: #0181f5;
+    --brand-light: #5db2ff;
+    --ink: #1f1f1f;
+    --muted: #727272;
+    --soft: #f7f7f7;
+    --footer-bg: #303030;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------------- Shared utilities ---------------- */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 18px;
+}
+
+.section-subtext {
+    font-size: 16.5px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.btn-brand {
+    background: linear-gradient(to right, var(--brand-dark) 0%, var(--brand-light) 100%);
+    color: #fff !important;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 13px 34px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.35s ease;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background: #fff;
+    color: var(--brand) !important;
+    border-color: var(--brand);
+}
+
+/* ---------------- Navbar ---------------- */
+
+.site-navbar {
+    background: #fff;
+    padding: 6px 0;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06);
+}
+
+.site-navbar .navbar-brand img {
+    height: 120px;
+    width: auto;
+}
+
+.site-navbar .nav-link {
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--ink);
+    padding: 8px 16px !important;
+    transition: color 0.3s ease;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active {
+    color: var(--brand);
+}
+
+.site-navbar .navbar-toggler {
+    border: 0;
+    padding: 4px 8px;
+    font-size: 22px;
+}
+
+.site-navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ---------------- Page banner ---------------- */
+
+.page-banner {
+    position: relative;
+    background-color: #65b4f9;
+    background-image: url(../img/banner/bann2.png);
+    background-repeat: no-repeat;
+    /* anchor to the top so the doctor's head is never clipped */
+    background-position: center top;
+    background-size: cover;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.page-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(9, 74, 116, 0.82), rgba(9, 74, 116, 0.55));
+}
+
+.page-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-banner h1 {
+    font-size: clamp(28px, 3.6vw, 44px);
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.page-banner .breadcrumb {
+    justify-content: center;
+    margin: 0;
+}
+
+.page-banner .breadcrumb-item,
+.page-banner .breadcrumb-item a {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+}
+
+.page-banner .breadcrumb-item a:hover {
+    color: #fff;
+}
+
+.page-banner .breadcrumb-item.active {
+    color: #fff;
+    font-weight: 500;
+}
+
+.page-banner .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------------- Service cards ---------------- */
+
+.services {
+    background: #fff;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.1);
+}
+
+.service-thumb img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.service-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.service-body h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+}
+
+.service-body p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--brand);
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+.learn-more:hover {
+    color: var(--brand-dark);
+    gap: 10px;
+}
+
+/* ---------------- CTA strip ---------------- */
+
+.cta-strip {
+    background: linear-gradient(120deg, var(--brand-dark) 0%, var(--brand-light) 100%);
+    padding: 42px 0;
+    color: #fff;
+}
+
+.cta-strip h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.cta-strip p {
+    margin: 0;
+    font-size: 15.5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------------- Emergency contact ---------------- */
+
+.emergency-card {
+    position: relative;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.emergency-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(9, 74, 116, 0.78), rgba(9, 74, 116, 0.45));
+}
+
+.emergency-content {
+    position: relative;
+    z-index: 1;
+    padding: 32px 42px;
+    color: #fff;
+}
+
+.emergency-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #fff;
+}
+
+.emergency-1 {
+    background-image: url(../img/banner/emergency-1.png);
+}
+
+.emergency-2 {
+    background-image: url(../img/banner/emergency-2.png);
+}
+
+.btn-light-outline {
+    border: 1px solid #fff;
+    color: #fff !important;
+    background: transparent;
+    border-radius: 30px;
+    padding: 10px 26px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.35s ease;
+}
+
+.btn-light-outline:hover {
+    background: #fff;
+    color: var(--ink) !important;
+}
+
+/* ---------------- Footer ---------------- */
+
+.site-footer {
+    background: var(--footer-bg);
+    color: #bebebe;
+    padding-top: 70px;
+}
+
+.footer-logo img {
+    height: 52px;
+    width: auto;
+    margin-bottom: 18px;
+}
+
+.footer-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #bebebe;
+    margin-bottom: 18px;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    font-size: 15px;
+    color: #bebebe;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--brand);
+}
+
+.footer-social {
+    display: flex;
+    gap: 8px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+.footer-contact {
+    color: #bebebe;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-contact:hover {
+    color: var(--brand);
+}
+
+.footer-contact i {
+    margin-right: 6px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    color: #9b9b9b;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--brand);
+}
+
+.footer-bottom .bi-heart-fill {
+    color: var(--brand);
+    font-size: 12px;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 991.98px) {
+    .section-padding {
+        padding: 55px 0;
+    }
+
+    .site-navbar .navbar-collapse {
+        padding-top: 12px;
+    }
+
+    .site-navbar .nav-link {
+        padding: 9px 0 !important;
+    }
+
+    .emergency-card {
+        min-height: 215px;
+    }
+
+    .page-banner {
+        padding: 70px 0;
+    }
+
+    .cta-strip {
+        text-align: center;
+    }
+
+    .cta-strip .text-lg-end {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .site-navbar .navbar-brand img {
+        height: 96px;
+    }
+
+    .page-banner {
+        padding: 55px 0;
+    }
+
+    .service-thumb img {
+        height: 205px;
+    }
+
+    .cta-strip h3 {
+        font-size: 20px;
+    }
+
+    .emergency-content {
+        padding: 26px 24px;
+    }
+
+    .emergency-content h3 {
+        font-size: 20px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+    }
+}

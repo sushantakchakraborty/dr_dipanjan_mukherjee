@@ -1,0 +1,9 @@
+# PHP files are not run on Vercel; excluding them keeps the credentials private.
+*.php
+phpmailer/
+
+# Old SB Shola Wood Flowers project — a different site, not part of this deployment.
+package/
+
+# Dependencies are installed by Vercel from package.json.
+node_modules/
